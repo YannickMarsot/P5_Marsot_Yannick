@@ -3,6 +3,7 @@ body {
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
+    width: 90%;
     @include respond-to(handhelds);
     @include respond-to(medium-screens);
     @include respond-to(wide-screens);
@@ -16,6 +17,9 @@ body {
     text-decoration: none;
     color: black;
   }
-}
 
-/*mettre la background color pour header et footer */
+  header,
+  footer {
+    background-color: $color-primary;
+  }
+}
