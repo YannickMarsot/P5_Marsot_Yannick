@@ -5,13 +5,17 @@ body #BlocPage {
   margin-right: auto;
   width: 90%;
   background-color: #f5f5f5;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 body ul {
   list-style-type: none;
 }
 body a {
   text-decoration: none;
-  color: black;
+  color: black !important;
 }
 
 header {
@@ -21,6 +25,11 @@ header {
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
+header .fas.fa-shopping-basket,
+header .fas.fa-home {
+  margin-left: 5px;
+  color: black;
+}
 
 footer {
   background-color: #f3e9f1;
@@ -28,6 +37,11 @@ footer {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
+}
+footer .fas.fa-phone,
+footer .fas.fa-home {
+  margin-left: 5px;
+  color: black;
 }
 
 /*# sourceMappingURL=main.css.map */

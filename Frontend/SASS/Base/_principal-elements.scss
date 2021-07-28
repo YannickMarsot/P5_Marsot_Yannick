@@ -5,6 +5,10 @@ body {
     margin-right: auto;
     width: 90%;
     background-color: $color-secondary;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
     @include respond-to(handhelds);
     @include respond-to(medium-screens);
     @include respond-to(wide-screens);
@@ -16,6 +20,6 @@ body {
 
   a {
     text-decoration: none;
-    color: black;
+    color: black !important;
   }
 }
