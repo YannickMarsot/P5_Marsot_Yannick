@@ -4,6 +4,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 90%;
+    background-color: $color-secondary;
     @include respond-to(handhelds);
     @include respond-to(medium-screens);
     @include respond-to(wide-screens);
@@ -16,10 +17,5 @@ body {
   a {
     text-decoration: none;
     color: black;
-  }
-
-  header,
-  footer {
-    background-color: $color-primary;
   }
 }
