@@ -1,1 +1,22 @@
 A faire: 
+faire callback api 
+afficher les articles dans HTML
+
+(function (value) {
+      console.log(value);
+      for (jsonArticle of jsonListArticle) {
+        let article = new article(jsonArticle);
+        document.getElementById("row").innerHTML += (
+          <div class="col-4" id="article">
+            <div class="image">
+              <a href="5be1ed3f1c9d44000030b061">
+                <img src="http://localhost:3000/images/vcam_1.jpg"></img>
+                <span href="#" class="add-cart cart">
+                  voir l'article
+                </span>
+              </a>
+            </div>
+          </div>
+        );
+      }
+    })
