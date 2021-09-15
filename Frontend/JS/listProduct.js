@@ -14,12 +14,12 @@ function getArticle() {
         document.querySelector(".list-product").innerHTML += `
         <div class="col-4 mx-auto conteneur" id="${article._id}">
         <div class="image">
-        <a href="#">
+        <a href="http://127.0.0.1:5500/Frontend/${article._id}.html">
         <img src="${article.imageUrl}">
-        <p>${article.lenses}</p>
-        <p>${article.name}</p>
-        <p>${article.price}
-        <p>${article.description}</p>
+        <p class="lenses">${article.lenses}</p>
+        <p class="name">${article.name}</p>
+        <p class="price">${article.price}
+        <p class="description">${article.description}</p>
         </a>
         `;
         //utilisation des "templates litteral" pour selectionner
