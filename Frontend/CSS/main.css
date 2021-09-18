@@ -38,6 +38,29 @@ body a {
 .list-product .conteneur p {
   color: black;
 }
+.list-product .conteneur .name {
+  font-weight: bold;
+}
+.list-product .conteneur .description {
+  font-style: italic;
+}
+.list-product .grandConteneur {
+  width: 80%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 4px 10px 8px #c1c1c1;
+  margin-bottom: 30px;
+}
+.list-product .grandConteneur img {
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.list-product .grandConteneur p {
+  color: black;
+}
 
 header {
   background-color: #f3e9f1;
