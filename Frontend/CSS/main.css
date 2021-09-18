@@ -61,6 +61,12 @@ body a {
 .list-product .grandConteneur p {
   color: black;
 }
+.list-product .grandConteneur .name {
+  font-weight: bold;
+}
+.list-product .grandConteneur .description {
+  font-style: italic;
+}
 
 header {
   background-color: #f3e9f1;
