@@ -1,5 +1,5 @@
 function getArticle() {
-  //ici on récupére l'api
+  //fonction pour récupérer l'API
   fetch("http://localhost:3000/api/cameras")
     .then(function (res) {
       if (res.ok) {
@@ -8,13 +8,13 @@ function getArticle() {
     })
     .then(function (jsonListArticle) {
       console.log("coucou");
-      // boucle dans laquelle pour chaque article crée un html
+      //Fonction boucle dans laquelle on crée un objet en HTML pour chaque article
       for (article of jsonListArticle) {
         console.log("recoucou");
         document.querySelector(".list-product").innerHTML += `
         <div class="col-4 mx-auto conteneur" id="${article._id}">
         <div class="image">
-        <a href="http://127.0.0.1:5500/Frontend/${article._id}.html">
+        <a href="http://127.0.0.1:5500/Frontend/produits.html?id=${article._id}">
         <img src="${article.imageUrl}">
         <p class="lenses"><div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
