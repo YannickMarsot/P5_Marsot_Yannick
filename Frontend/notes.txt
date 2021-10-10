@@ -1,4 +1,5 @@
+url api:
+http://localhost:3000/api/cameras
+
 A faire: 
-mettre parametre URL dans "a" des produits 
-recupérer le parametre URL avec Javascript dans la fonction "getById"
-mocha
+_mocha (test js)
