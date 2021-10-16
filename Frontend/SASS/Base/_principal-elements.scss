@@ -12,6 +12,11 @@ body {
     @include respond-to(handhelds);
     @include respond-to(medium-screens);
     @include respond-to(wide-screens);
+    .maison {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
   }
 
   ul {

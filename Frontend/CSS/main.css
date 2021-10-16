@@ -10,6 +10,11 @@ body #BlocPage {
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
+body #BlocPage .maison {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 body ul {
   list-style-type: none;
 }
@@ -35,21 +40,28 @@ body a {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.list-product .conteneur p {
+.list-product .conteneur .petitConteneur {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.list-product .conteneur .petitConteneur p {
   color: black;
 }
-.list-product .conteneur .name {
+.list-product .conteneur .petitConteneur .name {
   font-weight: bold;
 }
-.list-product .conteneur .description {
+.list-product .conteneur .petitConteneur .description {
   font-style: italic;
 }
-.list-product .conteneur .addToCart p {
+.list-product .conteneur .petitConteneur .addToCart p {
   text-align: center;
   width: 32%;
   background-color: black;
   border-radius: 15px;
   color: white;
+}
+.list-product .conteneur .petitConteneur .addToCart p:hover {
+  background-color: grey;
 }
 .list-product .grandConteneur {
   width: 80%;
@@ -65,21 +77,28 @@ body a {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.list-product .grandConteneur p {
+.list-product .grandConteneur .petitConteneur {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.list-product .grandConteneur .petitConteneur p {
   color: black;
 }
-.list-product .grandConteneur .name {
+.list-product .grandConteneur .petitConteneur .name {
   font-weight: bold;
 }
-.list-product .grandConteneur .description {
+.list-product .grandConteneur .petitConteneur .description {
   font-style: italic;
 }
-.list-product .grandConteneur .addToCart p {
+.list-product .grandConteneur .petitConteneur .addToCart p {
   text-align: center;
   width: 32%;
   background-color: black;
   border-radius: 15px;
   color: white;
+}
+.list-product .grandConteneur .petitConteneur .addToCart p:hover {
+  background-color: grey;
 }
 
 header {
