@@ -30,6 +30,7 @@ function getArticle() {
         <p class="price">${article.price}
         <p class="description">${article.description}</p>
         </a>
+        <a href="#" title="add to cart" class="addToCart"><p>Ajouter au panier</p><a/>
         `;
         //utilisation des "templates litteral" pour selectionner
         //chaque element de l'objet

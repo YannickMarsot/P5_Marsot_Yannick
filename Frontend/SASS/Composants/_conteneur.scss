@@ -26,6 +26,16 @@
     .description {
       font-style: italic;
     }
+
+    .addToCart {
+      p {
+        text-align: center;
+        width: 32%;
+        background-color: black;
+        border-radius: 15px;
+        color: white;
+      }
+    }
   }
 
   .grandConteneur {
@@ -53,6 +63,16 @@
 
     .description {
       font-style: italic;
+    }
+
+    .addToCart {
+      p {
+        text-align: center;
+        width: 32%;
+        background-color: black;
+        border-radius: 15px;
+        color: white;
+      }
     }
   }
 }

@@ -44,6 +44,13 @@ body a {
 .list-product .conteneur .description {
   font-style: italic;
 }
+.list-product .conteneur .addToCart p {
+  text-align: center;
+  width: 32%;
+  background-color: black;
+  border-radius: 15px;
+  color: white;
+}
 .list-product .grandConteneur {
   width: 80%;
   border-bottom-left-radius: 15px;
@@ -66,6 +73,13 @@ body a {
 }
 .list-product .grandConteneur .description {
   font-style: italic;
+}
+.list-product .grandConteneur .addToCart p {
+  text-align: center;
+  width: 32%;
+  background-color: black;
+  border-radius: 15px;
+  color: white;
 }
 
 header {
