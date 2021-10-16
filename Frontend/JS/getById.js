@@ -57,31 +57,30 @@ function get_article_by_id() {
 
 function write_product(product) {
   document.querySelector(".list-product").innerHTML = `
-      <div class="col-4 mx-auto grandConteneur" id="${product._id}">
-        <div class="image">
-          <img src="${product.imageUrl}">
-        </div>
-      <p class="lenses">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Lenses
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">${product.lenses}</a></li>
-            <li><a class="dropdown-item" href="#">${product.lenses}</a></li>
-            <li><a class="dropdown-item" href="#">${product.lenses}</a></li>
-          </ul>
-        </div></p>
-        <div class="petitConteneur">
-          <p class="name">${product.name}</p>
-          <p class="price">${product.price}
-          <p class="description">${product.description}</p>
-          <a href="#" title="add to cart" class="addToCart">
-            <p>Ajouter au panier</p>
-          <a/>
-        </div>
+    <div class="col-4 mx-auto grandConteneur" id="${product._id}">
+      <div class="image">
+        <img src="${product.imageUrl}">
       </div>
+      <div class="lensesConteneur">
+        <label for="lenses">Choose a lense</label>
+          <select name="Lenses" id="lenses-select">
+          <option value="exemple">"exemple 1"</option>
+          <option value="exemple">"exemple 2"</option>
+          <option value="exemple">"exemple 3"</option>
+          </select>
+      </div>
+      <div class="petitConteneur">
+        <p class="name">${product.name}</p>
+        <p class="price">${product.price}</p>
+        <p class="description">${product.description}</p>
+        <a href="#" title="add to cart" class="addToCart">
+          <p>Ajouter au panier</p>
+        <a/>
+      </div>
+    </div>
       `;
 }
 
 get_article_by_id();
+
+//dropdown menu "lenses"S
