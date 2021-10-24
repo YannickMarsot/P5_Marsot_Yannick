@@ -3,3 +3,7 @@ http://localhost:3000/api/cameras
 
 A faire: 
 _mocha (test js)
+_version mobile
+_stocker id dans "products" (local storage)
+_stocker prix dans "panier" (local storage)
+ 
