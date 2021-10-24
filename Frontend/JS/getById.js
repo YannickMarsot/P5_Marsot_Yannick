@@ -37,12 +37,33 @@ function write_product(product) {
         <p class="name">${product.name}</p>
         <p class="price">${product.price}</p>
         <p class="description">${product.description}</p>
-        <a href="#" title="add to cart" class="addToCart">
-          <p>Ajouter au panier</p>
-        <a/>
+        <button href="#" onclick="addToCart();">
+        Ajouter au panier
+        </button>  
       </div>
     </div>
       `;
+
+  // .then(function addToCart() {
+  //   let name = document.getElementsByClassName("name");
+  //   let price = document.getElementsByClassName("price");
+  //   let image = document.getElementsByClassName("image");
+  //   console.log(name, price, image);
+  //   let product = { name, no: 1 };
+  //   let panier = { price, no: 1 };
+  //   localStorage.setItem(JSON.stringify(product), JSON.stringify(panier));
+  // });
+}
+
+//ajout au panier
+function addToCart() {
+  let name = document.getElementsByClassName("name");
+  let price = document.getElementsByClassName("price");
+  let image = document.getElementsByClassName("image");
+  console.log(name, price, image);
+  let product = { name, no: 1 };
+  let panier = { price, no: 1 };
+  localStorage.setItem(JSON.stringify(product), JSON.stringify(panier));
 }
 
 get_article_by_id();
