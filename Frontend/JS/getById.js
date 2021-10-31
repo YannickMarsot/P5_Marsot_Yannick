@@ -16,20 +16,7 @@ function get_article_by_id() {
 }
 
 function write_product(product) {
-  console.log(product.lenses);
-  product.lenses.forEach(function (item, index) {
-    console.log(item, index);
-  });
-  //version 2 (non fonctionnelle)
-  //avec display "none" pour "undefined"
-  // console.log(product.lenses);
-  // if (product.lenses !== "undefined") {
-  //   product.lenses = '<p style="display: none">undefined</p>';
-  // } else {
-  //   product.lenses.forEach(function (item, index) {
-  //     console.log(item, index);
-  //   });
-  // }
+  //fonction pour afficher le produit
   document.querySelector(".list-product").innerHTML = `
     <div class="col-4 mx-auto grandConteneur" id="${product._id}">
       <div class="image">

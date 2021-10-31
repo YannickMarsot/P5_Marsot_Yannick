@@ -53,14 +53,14 @@ body a {
 .list-product .conteneur .petitConteneur .description {
   font-style: italic;
 }
-.list-product .conteneur .petitConteneur .addToCart p {
+.list-product .conteneur .petitConteneur .showProductBtn p {
   text-align: center;
   width: 32%;
   background-color: black;
   border-radius: 15px;
   color: white;
 }
-.list-product .conteneur .petitConteneur .addToCart p:hover {
+.list-product .conteneur .petitConteneur .showProductBtn p:hover {
   background-color: grey;
 }
 .list-product .grandConteneur {
@@ -105,14 +105,14 @@ body a {
 .list-product .grandConteneur .petitConteneur .description {
   font-style: italic;
 }
-.list-product .grandConteneur .petitConteneur .addToCart p {
+.list-product .grandConteneur .petitConteneur button {
   text-align: center;
   width: 32%;
   background-color: black;
   border-radius: 9px;
   color: white;
 }
-.list-product .grandConteneur .petitConteneur .addToCart p:hover {
+.list-product .grandConteneur .petitConteneur button:hover {
   background-color: grey;
 }
 

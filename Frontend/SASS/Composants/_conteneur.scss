@@ -31,7 +31,7 @@
         font-style: italic;
       }
 
-      .addToCart {
+      .showProductBtn {
         p {
           text-align: center;
           width: 32%;
@@ -40,6 +40,7 @@
           color: white;
           &:hover {
             background-color: grey;
+            // background-color: linear-gradient(to left, #ebc191, #8f5bfd);
           }
         }
       }
@@ -94,16 +95,15 @@
         font-style: italic;
       }
 
-      .addToCart {
-        p {
-          text-align: center;
-          width: 32%;
-          background-color: black;
-          border-radius: 9px;
-          color: white;
-          &:hover {
-            background-color: grey;
-          }
+      button {
+        text-align: center;
+        width: 32%;
+        background-color: black;
+        border-radius: 9px;
+        color: white;
+        &:hover {
+          background-color: grey;
+          // background-color: linear-gradient(to left, #ebc191, #8f5bfd);
         }
       }
     }
