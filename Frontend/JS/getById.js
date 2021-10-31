@@ -55,38 +55,49 @@ function write_product(product) {
       </div>
     </div>
       `;
-
-  //fonction à mettre dans "write_product"
-  //car product.name non défini sinon?
-  // .then(function addToCart() {
-  //   let name = document.getElementsByClassName("name");
-  //   let price = document.getElementsByClassName("price");
-  //   let image = document.getElementsByClassName("image");
-  //   console.log(name, price, image);
-  //   let product = { name, no: 1 };
-  //   let panier = { price, no: 1 };
-  //   localStorage.setItem(JSON.stringify(product), JSON.stringify(panier));
-  // });
+  console.log(product.lenses);
+  product.lenses.forEach(function (item, index) {
+    //dropdown menu
+    console.log(item, index);
+    for (i = 0; i < product.lenses; i++) {
+      document.querySelector(
+        "#lensesSelect"
+      ).innerHTML += `<option value="exemple" class="lenses_choice" onclick="select_lenses();">${product.lenses[i]}</option>`;
+      console.log(i.length);
+    }
+  });
 }
 
 //ajout au panier
 function addToCart() {
-  // let id = document.getElementById("id");
-  let name = document.getElementsByClassName("name");
-  let price = document.getElementsByClassName("price");
-  let image = document.getElementsByClassName("image");
-  console.log(name, price, image);
-  let product = { name, no: 1 };
-  //let product= {
-  //   id,
-  //   name,
-  //   no: 1
-  // }
-  let panier = {
-    price,
-    no: 1,
+  let id_product = document.getElementsByClassName("grandConteneur");
+  let price_product = document.getElementsByClassName("price");
+  //let name = document.getElementsByClassName("name"); (pour futur implémentation du panier?)
+  //let image = document.getElementsByClassName("image"); (pour futur implémentation du panier?)
+  console.log(price_product[0].innerText);
+  let product = {
+    id: id_product[0].id,
   };
-  localStorage.setItem(JSON.stringify(product), JSON.stringify(panier));
+  let panier = {
+    id: id_product[0].id,
+    price: price_product[0].innerText,
+    // size: (option lenses),
+    qte: 1,
+    total: qte * price,
+  };
+  //localStorage.setItem(JSON.stringify(product), JSON.stringify(panier));
+  localStorage.setItem("product", JSON.stringify(product));
+  localStorage.setItem("cart", JSON.stringify(panier));
+}
+
+function select_quantity() {
+  qte = document.getElementById("quantity");
+  console.log(qte);
+}
+
+function select_lenses() {
+  size = document.getElementsByClassName("lenses_choice");
+  console.log(size);
 }
 
 get_article_by_id();
