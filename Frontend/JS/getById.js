@@ -47,16 +47,12 @@ function write_product(product) {
       </div>
     </div>
       `;
-  console.log(product.lenses);
+
   product.lenses.forEach(function (item, index) {
     //dropdown menu
-    console.log(item, index);
-    for (i = 0; i < product.lenses; i++) {
-      document.querySelector(
-        "#lensesSelect"
-      ).innerHTML += `<option value="exemple" class="lenses_choice" onclick="select_lenses();">${product.lenses[i]}</option>`;
-      console.log(i.length);
-    }
+    document.querySelector(
+      "#lensesSelect"
+    ).innerHTML += `<option value="${item}" class="quantity_choices">${item}</option>`;
   });
 }
 
@@ -66,30 +62,30 @@ function addToCart() {
   let price_product = document.getElementsByClassName("price");
   //let name = document.getElementsByClassName("name"); (pour futur implémentation du panier?)
   //let image = document.getElementsByClassName("image"); (pour futur implémentation du panier?)
-  console.log(price_product[0].innerText);
+  //console.log(price_product[0].innerText);
   let product = {
     id: id_product[0].id,
-  };
-  let panier = {
-    id: id_product[0].id,
+    //size: valeur_selectionnee,
     price: price_product[0].innerText,
-    // size: (option lenses),
-    qte: 1,
-    total: qte * price,
+    qte: valeur_quantitee,
+    //total: qte * price,
   };
-  //localStorage.setItem(JSON.stringify(product), JSON.stringify(panier));
   localStorage.setItem("product", JSON.stringify(product));
-  localStorage.setItem("cart", JSON.stringify(panier));
 }
 
 function select_quantity() {
-  qte = document.getElementById("quantity");
-  console.log(qte);
+  var quantitee = document.getElementById("quantity");
+  var valeur_quantitee = quantitee.options[quantitee.selectedIndex].value;
+  console.log(valeur_quantitee);
 }
 
 function select_lenses() {
-  size = document.getElementsByClassName("lenses_choice");
-  console.log(size);
+  var lenses_selected = document.getElementById(lensesSelect);
+  var valeur_selectionnee =
+    lenses_selected.options[lenses_selected.selectedIndex].value;
+  //console.log(valeur_selectionnee);
+  //size = document.getElementsByClassName("quantity_choices");
+  //console.log(size);
 }
 
 get_article_by_id();
