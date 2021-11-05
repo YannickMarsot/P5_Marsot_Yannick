@@ -24,13 +24,18 @@ function write_product(product) {
       </div>
       <div class="lensesConteneur">
         <label for="lenses">Choose a lense</label>
-          <select name="Lenses" id="lensesSelect">          
+          <select name="Lenses" id="lensesSelect" onChange="select_lenses();">          
           </select>
       </div>
       <div class="quantityConteneur">
         <label for="quantity">Select quantity</label>
-        <input type="number" id="quantity" name="quantity"
-        min="1" max="10" value="1" onclick="select_quantity();">
+          <select id="quantity" onchange="select_quantity();">
+            <option value="1" class="quantity_choices">1</option>
+            <option value="2" class="quantity_choices">2</option>
+            <option value="3" class="quantity_choices">3</option>
+            <option value="4" class="quantity_choices">4</option>
+            <option value="5" class="quantity_choices">5</option>
+        </select>
       </div>
       <div class="petitConteneur">
         <p class="name">${product.name}</p>
