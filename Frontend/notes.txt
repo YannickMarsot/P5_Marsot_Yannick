@@ -4,10 +4,9 @@ http://localhost:3000/api/cameras
 A faire: 
 _mocha (test js)
 _version mobile
-_stocker id dans "products" (local storage)
-_stocker prix dans "panier" (local storage)
 _regex (conditionnele pour html)
-_faire le calcul panier
+{generateur de regex}
 _faire un innerHTML depuis le local storage afin de remplir le panier
-_mettre fonction "size" quantity directemment ds le tableau
+{un récapitulatif du panier au dessus du formulaire}
+
  
