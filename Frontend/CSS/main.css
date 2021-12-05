@@ -115,6 +115,35 @@ body a {
 .list-product .grandConteneur .petitConteneur button:hover {
   background-color: grey;
 }
+.list-product #conteneurPanier {
+  width: 40%;
+  border-radius: 15px;
+  background-color: #f3e9f1;
+  box-shadow: 4px 10px 8px #c1c1c1;
+  margin-bottom: 30px;
+}
+.list-product #conteneurPanier #petitConteneurPanier {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.list-product #conteneurPanier #petitConteneurPanier p {
+  margin-top: 5px;
+}
+.list-product #conteneurPanier #petitConteneurPanier label {
+  margin-top: 5px;
+}
+.list-product #conteneurPanier #petitConteneurPanier button {
+  text-align: center;
+  margin-top: 5px;
+  width: 32%;
+  background-color: black;
+  border-radius: 9px;
+  color: white;
+}
+.list-product #conteneurPanier #petitConteneurPanier button:hover {
+  background-color: grey;
+}
 
 header {
   background-color: #f3e9f1;
