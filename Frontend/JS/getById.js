@@ -97,3 +97,14 @@ function select_lenses() {
 }
 
 get_article_by_id();
+
+// var re = [a - z];
+// function testInfo(aToZpattern.input) {
+//   var OK = re.exec(phoneInput.value);
+//   var out = document.querySelector("#out");
+//   if (!OK) {
+//     out.textContent = `${phoneInput.value} isn't a phone number with area code!`;
+//   } else {
+//     out.textContent = `Thanks, your phone number is ${OK[0]}`;
+//   }
+// }
