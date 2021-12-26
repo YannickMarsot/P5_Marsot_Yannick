@@ -5,16 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="Stylesheet" href="CSS/main.css" />
-    <script
-      src="https://kit.fontawesome.com/612c8c18de.js"
-      crossorigin="anonymous"
-    ></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+
+    <script
+      src="https://kit.fontawesome.com/612c8c18de.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="JS/panier.js"></script>
+
     <title>Panier</title>
   </head>
   <body>
@@ -50,39 +53,54 @@
                 <label>
                   Entrer vôtre Prénom
                   <input
-                    class="aToZPattern"
+                    id="text_prenom"
                     name="first-name"
                     type="text"
-                    pattern="[a-z]"
+                    value=""
+                    onchange="validatePrenom();"
                   />
                 </label>
                 <label>
                   Entrer vôtre Nom
                   <input
-                    class="aToZPattern"
+                    id="text_nom"
                     name="last-name"
                     type="text"
-                    pattern="[a-z]"
+                    value=""
+                    onchange="validateNom();"
                   />
                 </label>
                 <label>
                   Entrer vôtre Adresse
-                  <input name="adress" type="text" pattern="[a-z]" />
+                  <input
+                    id="adress"
+                    name="adress"
+                    type="text"
+                    value=""
+                    onchange="validateAdress();"
+                  />
                 </label>
                 <label>
                   Entrer vôtre Ville
                   <input
-                    class="aToZPattern"
+                    id="City"
                     name="city"
                     type="text"
-                    pattern="[a-z]"
+                    value=""
+                    onchange="validateVille();"
                   />
                 </label>
                 <label>
                   Entrer vôtre E-mail
-                  <input name="e-mail" type="email" />
+                  <input
+                    id="e-mail"
+                    name="e-mail"
+                    type="email"
+                    value=""
+                    onchange="validateEmail();"
+                  />
                 </label>
-                <button href="#">Envoyer</button>
+                <button href="#" onclick="">Envoyer</button>
               </div>
             </div>
           </div>
