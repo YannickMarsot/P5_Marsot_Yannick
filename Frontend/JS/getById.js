@@ -70,7 +70,7 @@ function addToCart() {
   var totalPanier = valeur_quantitee * price_product[0].innerText;
   //let name = document.getElementsByClassName("name"); (pour futur implémentation du panier?)
   //let image = document.getElementsByClassName("image"); (pour futur implémentation du panier?)
-  console.log(totalPanier);
+  //console.log(totalPanier);
   let product = {
     id: id_product[0].id,
     size: valeur_selectionnee,
@@ -97,14 +97,3 @@ function select_lenses() {
 }
 
 get_article_by_id();
-
-// var re = [a - z];
-// function testInfo(aToZpattern.input) {
-//   var OK = re.exec(phoneInput.value);
-//   var out = document.querySelector("#out");
-//   if (!OK) {
-//     out.textContent = `${phoneInput.value} isn't a phone number with area code!`;
-//   } else {
-//     out.textContent = `Thanks, your phone number is ${OK[0]}`;
-//   }
-// }

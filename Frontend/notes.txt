@@ -4,21 +4,12 @@ http://localhost:3000/api/cameras
 A faire: 
 _mocha (test js)
 _version mobile
-_regex (conditionnele pour html)
-{generateur de regex}
 _faire un innerHTML depuis le local storage afin de remplir le panier
 {un récapitulatif du panier au dessus du formulaire}
 _liste panier (n'écrase pas les produits precedents)
 -boucler panier (forEach)
 
-function ValidateEmail(mail) 
-{
- if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value))
-  {
-    return (true)
-  }
-    alert("You have entered an invalid email address!")
-    return (false)
-}
+
+
 
  
