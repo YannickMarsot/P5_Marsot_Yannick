@@ -7,10 +7,8 @@ function getArticle() {
       }
     })
     .then(function (jsonListArticle) {
-      console.log("coucou");
       //Fonction boucle dans laquelle on crée un objet en HTML pour chaque article
       for (article of jsonListArticle) {
-        console.log("recoucou");
         document.querySelector(".list-product").innerHTML += `
         <div class="conteneur" id="${article._id}">
           <div class="image">
