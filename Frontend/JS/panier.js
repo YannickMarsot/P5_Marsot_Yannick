@@ -49,3 +49,19 @@ function validateEmail() {
   alert("l'email n'est pas valide");
   return false;
 }
+
+//affichage panier
+
+function affichagePanier() {
+  const local_storage = localStorage.getItem("product");
+  for (product of local_storage) {
+    console.log(product);
+    // document.querySelector(".containerAffichagePanier").innerHTML += `
+    // `;
+  }
+  // local_storage.forEach((product) => {
+  //   console.log(product[id]);
+  // });
+}
+
+affichagePanier();
