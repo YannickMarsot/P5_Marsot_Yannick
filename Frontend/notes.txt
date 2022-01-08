@@ -9,7 +9,33 @@ _faire un innerHTML depuis le local storage afin de remplir le panier
 _liste panier (n'écrase pas les produits precedents)
 -boucler panier (forEach)
 
+question mentor: 
+_mon panier "s'écrase" malgré le tableau "mon panier"
+_innerHtml "panier vide" bug alors que le console.log marche
+_idem "panier rempli"
 
+methode if/else pour ne pas écraser localStorage (setItem/getItem)
+
+
+boucle for affichage panier (marche étrangement)
+// for (element of local_storage) {
+  //   console.log(element);
+  //   // document.querySelector(".containerAffichagePanier").innerHTML += `
+  //   // `;
+  // }
+
+autrement? :
+
+  for (j = 0, j < local_storage.lenght, j++) {
+      console.log(local_storage.lenght)
+     document.querySelector(".containerAffichagePanier").innerHTML += `
+     <h2>Vôtre panier</h2>
+        <div id="petitContainerAffichagePanier">
+        </--exemple-->
+          <p>price= ${local_storage[j].price}</p>
+        </div>
+     `;
+  }
 
 
  
