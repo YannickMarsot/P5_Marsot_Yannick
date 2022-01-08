@@ -79,6 +79,18 @@ function addToCart() {
     total: totalPanier,
   };
   localStorage.setItem("product", JSON.stringify(product));
+  // let monPanier = localStorage.getItem("product");
+  // if (monPanier) {
+  //   //si mon panier est rempli (il arrive à récupérer product)
+  //   monPanier.push(product);
+  //   localStorage.setItem("product", JSON.stringify(monPanier));
+  // } else {
+  //   //si mon panier est vide
+  //   monPanier = [];
+  //   console.log(monPanier);
+  //   monPanier.push(product);
+  //   localStorage.setItem("product", JSON.stringify(monPanier));
+  // }
 }
 
 function select_quantity() {
