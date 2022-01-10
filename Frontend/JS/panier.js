@@ -54,6 +54,7 @@ function validateEmail() {
 
 function affichagePanier() {
   const local_storage = localStorage.getItem("product");
+
   if (local_storage === null) {
     //affichage panier vide:
     console.log("je suis vide");
@@ -67,21 +68,23 @@ function affichagePanier() {
     //affichage panier rempli:
     console.log("je suis rempli");
     [local_storage].forEach((element) => {
-      console.log(element);
+      //console.log(element);
+
       let elementObjet = JSON.parse(element);
       //avec JSON.parse on transforme un element JSON en objet javascript!!!
-      console.log(elementObjet.id);
-      // document.querySelector(".containerAffichagePanier").innerHTML += `
-      // <h2>Vôtre panier</h2>
-      //   <div id="petitContainerAffichagePanier">
-      //     <ul>
-      //       <li>id:${elementObjet.id}</li>
-      //       <li>size:${elementObjet.size}</li>
-      //       <li>quantitee${elementObjet.qte}</li>
-      //       <li>cost:${elementObjet.total}</li>
-      //     </ul>
-      //   </div>
-      // `;
+      //console.log(elementObjet.id);
+
+      document.querySelector(".containerAffichagePanier").innerHTML += `
+      <h2>Vôtre panier</h2>
+        <div id="petitContainerAffichagePanier">
+          <ul>
+            <li>id:${elementObjet.id}</li>
+            <li>size:${elementObjet.size}</li>
+            <li>quantitee${elementObjet.qte}</li>
+            <li>cost:${elementObjet.total}</li>
+          </ul>
+        </div>
+      `;
     });
   }
 }
