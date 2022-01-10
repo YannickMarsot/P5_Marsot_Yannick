@@ -54,14 +54,39 @@ function validateEmail() {
 
 function affichagePanier() {
   const local_storage = localStorage.getItem("product");
-  for (product of local_storage) {
-    console.log(product);
-    // document.querySelector(".containerAffichagePanier").innerHTML += `
-    // `;
+
+  if (local_storage === null) {
+    //affichage panier vide:
+    console.log("je suis vide");
+    // document.querySelector(".containerAffichagePanier").innerHTML = `
+    //     <h2>Vôtre panier</h2>
+    //     <div id="petitContainerAffichagePanier">
+    //       <p>Pour l'instant vôtre panier est vide</p>
+    //     </div>
+    //   `;
+  } else {
+    //affichage panier rempli:
+    console.log("je suis rempli");
+    [local_storage].forEach((element) => {
+      //console.log(element);
+
+      let elementObjet = JSON.parse(element);
+      //avec JSON.parse on transforme un element JSON en objet javascript!!!
+      //console.log(elementObjet.id);
+
+      document.querySelector(".containerAffichagePanier").innerHTML += `
+      <h2>Vôtre panier</h2>
+        <div id="petitContainerAffichagePanier">
+          <ul>
+            <li>id:${elementObjet.id}</li>
+            <li>size:${elementObjet.size}</li>
+            <li>quantitee${elementObjet.qte}</li>
+            <li>cost:${elementObjet.total}</li>
+          </ul>
+        </div>
+      `;
+    });
   }
-  // local_storage.forEach((product) => {
-  //   console.log(product[id]);
-  // });
 }
 
 affichagePanier();
