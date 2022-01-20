@@ -16,7 +16,7 @@
       src="https://kit.fontawesome.com/612c8c18de.js"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript" src="JS/panier.js"></script>
+    <script type="text/javascript" src="JS/panier.js" defer></script>
 
     <title>Panier</title>
   </head>
@@ -45,7 +45,12 @@
         </nav>
       </header>
       <main>
-        <div class="containerAffichagePanier"></div>
+        <div class="containerAffichagePanier">
+          <h2>Vôtre panier</h2>
+          <div id="petitContainerAffichagePanier">
+            <ul class="list-group" id="affPanier"></ul>
+          </div>
+        </div>
         <div class="container">
           <div class="list-product maison">
             <div id="conteneurPanier">

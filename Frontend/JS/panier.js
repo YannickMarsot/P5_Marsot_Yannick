@@ -58,35 +58,36 @@ function affichagePanier() {
   if (local_storage === null) {
     //affichage panier vide:
     console.log("je suis vide");
-    // document.querySelector(".containerAffichagePanier").innerHTML = `
-    //     <h2>Vôtre panier</h2>
-    //     <div id="petitContainerAffichagePanier">
-    //       <p>Pour l'instant vôtre panier est vide</p>
-    //     </div>
-    //   `;
+    document.querySelector("#petitContainerAffichagePanier").innerHTML = `
+          <p>Pour l'instant vôtre panier est vide</p>
+      `;
   } else {
     //affichage panier rempli:
     console.log("je suis rempli");
     [local_storage].forEach((element) => {
-      //console.log(element);
+      console.log(element);
 
       let elementObjet = JSON.parse(element);
       //avec JSON.parse on transforme un element JSON en objet javascript!!!
-      //console.log(elementObjet.id);
+      console.log(elementObjet);
 
-      document.querySelector(".containerAffichagePanier").innerHTML += `
-      <h2>Vôtre panier</h2>
-        <div id="petitContainerAffichagePanier">
-          <ul>
-            <li>id:${elementObjet.id}</li>
-            <li>size:${elementObjet.size}</li>
-            <li>quantitee${elementObjet.qte}</li>
-            <li>cost:${elementObjet.total}</li>
-          </ul>
-        </div>
+      document.querySelector("#affPanier").innerHTML += `
+      <li class="list-group-item">
+        <span class="idItem">id:${elementObjet.id}</span>
+        <span class="sizeItem">size:${elementObjet.size}</span>
+        <span class="qteItem">quantitee:${elementObjet.qte}</span>
+        <span class="costItem">cost:${elementObjet.total}</span>
+      </li>
       `;
     });
   }
 }
 
 affichagePanier();
+
+//envoyer les données à l'api
+
+// function sendData() {
+//   let data = [];
+//   console.log();
+// }
