@@ -26,6 +26,26 @@ boucle for affichage panier (marche étrangement)
 
 autrement? :
 
+
+methode fetch avec post en argument et l'url
+
+var form = new FormData(document.getElementById('login-form'));
+fetch("/login", {
+  method: "POST",
+  body: form
+})
+
+let daya = {
+            contact,
+            product
+        };
+
+let contact = {
+        firstName: document.getElementById('firstName').value }
+
+ne pas pouvoir ajouter de produit sans option, 
+ajouter plusieurs produits
+
   for (j = 0, j < local_storage.lenght, j++) {
       console.log(local_storage.lenght)
      document.querySelector(".containerAffichagePanier").innerHTML += `
