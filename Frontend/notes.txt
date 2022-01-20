@@ -4,47 +4,15 @@ http://localhost:3000/api/cameras
 A faire: 
 _mocha (test js)
 _version mobile
-_faire un innerHTML depuis le local storage afin de remplir le panier
-{un récapitulatif du panier au dessus du formulaire}
 _liste panier (n'écrase pas les produits precedents)
--boucler panier (forEach)
+_ne pas pouvoir ajouter de produit sans option, 
+_ajouter plusieurs produits
 
 question mentor: 
 _mon panier "s'écrase" malgré le tableau "mon panier"
-_innerHtml "panier vide" bug alors que le console.log marche
-_idem "panier rempli"
+_sur la doc il mette "/order" faut t'il mettre l'url api
+ou le lien du fichier Backend?
 
-methode if/else pour ne pas écraser localStorage (setItem/getItem)
-
-
-boucle for affichage panier (marche étrangement)
-// for (element of local_storage) {
-  //   console.log(element);
-  //   // document.querySelector(".containerAffichagePanier").innerHTML += `
-  //   // `;
-  // }
-
-autrement? :
-
-
-methode fetch avec post en argument et l'url
-
-var form = new FormData(document.getElementById('login-form'));
-fetch("/login", {
-  method: "POST",
-  body: form
-})
-
-let daya = {
-            contact,
-            product
-        };
-
-let contact = {
-        firstName: document.getElementById('firstName').value }
-
-ne pas pouvoir ajouter de produit sans option, 
-ajouter plusieurs produits
 
   for (j = 0, j < local_storage.lenght, j++) {
       console.log(local_storage.lenght)
