@@ -25,13 +25,13 @@ function write_product(product) {
       <div class="lensesConteneur">
         <label for="lenses">Choose a lense</label>
           <select name="Lenses" id="lensesSelect" onChange="select_lenses();">  
-          <option selected="selected" disabled>select an option</option>        
+          <option value="0" selected="selected" disabled>select an option</option>        
           </select>
       </div>
       <div class="quantityConteneur">
         <label for="quantity">Select quantity</label>
           <select id="quantity" onchange="select_quantity();">
-            <option selected="selected" disabled>select an option</option>
+            <option value="0"selected="selected" disabled>select an option</option>
             <option value="1" class="quantity_choices">1</option>
             <option value="2" class="quantity_choices">2</option>
             <option value="3" class="quantity_choices">3</option>
@@ -80,16 +80,16 @@ function addToCart() {
   };
   // localStorage.setItem("product", JSON.stringify(product));
   let monPanier = [];
-  if (monPanier.length >= 1) {
+  if (monPanier != null) {
     //si mon panier est rempli
     console.log("le panier est déjà rempli", monPanier);
-    localStorage.setItem("product", JSON.stringify(monPanier));
-    monPanier.push(product);
+    localStorage.setItem("product" + product.id, JSON.stringify(product));
+    monPanier.push(product + product.id);
   } else {
     //si mon panier est vide
     console.log(monPanier);
-    localStorage.setItem("product", JSON.stringify(monPanier));
-    monPanier.push(product);
+    localStorage.setItem("product" + product.id, JSON.stringify(product));
+    monPanier.push(product + product.id);
   }
   alert("vôtre commande a été ajouté au panier");
 }
