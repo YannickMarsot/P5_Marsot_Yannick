@@ -12,6 +12,7 @@ question mentor:
 _mon panier "s'écrase" malgré le tableau "mon panier"
 _sur la doc il mette "/order" faut t'il mettre l'url api
 ou le lien du fichier Backend?
+_comment vérifier si les données ont bien étaient envoyé dans l'api?
 
 
   for (j = 0, j < local_storage.lenght, j++) {

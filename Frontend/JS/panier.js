@@ -102,6 +102,7 @@ function sendData() {
     email,
   };
   console.log(data, "data verification");
+  //utilisation de la methode "POST" afin d'envoyer les données à l'api
   // fetch("/order", {
   //   method: "POST",
   //   body: data,
