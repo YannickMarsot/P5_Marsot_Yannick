@@ -9,10 +9,9 @@ _ne pas pouvoir ajouter de produit sans option,
 _ajouter plusieurs produits
 
 question mentor: 
-_mon panier "s'écrase" malgré le tableau "mon panier"
-_sur la doc il mette "/order" faut t'il mettre l'url api
-ou le lien du fichier Backend?
-_comment vérifier si les données ont bien étaient envoyé dans l'api?
+_condition addToCart-btn ne marche pas
+_products pas défini alors que "local_storage"
+_j'ai l'impression de ne pas rentrer dans la condition panier vide
 
 
   for (j = 0, j < local_storage.lenght, j++) {
@@ -27,4 +26,5 @@ _comment vérifier si les données ont bien étaient envoyé dans l'api?
   }
 
 
- 
+ Pour update le panier utiliser json parse pour changer le local storage 
+ en objet javascript puis set item afin de refaire le panier pour le mettre à jour
