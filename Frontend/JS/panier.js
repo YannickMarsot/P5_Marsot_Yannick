@@ -87,25 +87,25 @@ affichagePanier();
 
 //envoyer les données à l'api
 
-function sendData() {
+function sendContact() {
   let firstName = document.getElementById("text_prenom").value;
   let lastName = document.getElementById("text_nom").value;
   let city = document.getElementById("City").value;
   let adress = document.getElementById("adress").value;
   let email = document.getElementById("e-mail").value;
   console.log(firstName, "sendData verification");
-  let data = {
+  let contact = {
     firstName,
     lastName,
     city,
     adress,
     email,
   };
-  console.log(data, "data verification");
+  console.log(contact, "data verification");
   //utilisation de la methode "POST" afin d'envoyer les données à l'api
-  // fetch("/order", {
-  //   method: "POST",
-  //   body: data,
-  // });
+  fetch("/order", {
+    method: "POST",
+    body: contact,
+  }).then((res) => console.log(res.status));
   alert("vôtre commande à était envoyé!!!");
 }
