@@ -84,15 +84,24 @@ function addToCart() {
   if (monPanier != null) {
     //si mon panier est rempli
     console.log("le panier est déjà rempli", monPanier);
-    localStorage.setItem("product" + product.id, JSON.stringify(product));
-    monPanier.push(product + product.id);
+    let objetProduct = JSON.parse(products);
+    console.log(objetProduct);
+    localStorage.setItem("products", JSON.stringify(product + objetProduct));
+    monPanier.push(products);
   } else {
     //si mon panier est vide
-    console.log(monPanier);
-    localStorage.setItem("product" + product.id, JSON.stringify(product));
-    monPanier.push(product + product.id);
+    console.log("le panier est vide", monPanier);
+    localStorage.setItem("products", JSON.stringify(product));
+    monPanier.push(products);
   }
   alert("vôtre commande a été ajouté au panier");
+  //condition pour ne pas ajouter des produits sans rien selectionner
+  if ((valeur_quantitee = 0)) {
+    button.disabled = true;
+  }
+  if ((valeur_selectionnee = 0)) {
+    button.disabled = true;
+  }
 }
 
 function select_quantity() {
