@@ -53,7 +53,7 @@ function validateEmail() {
 //affichage panier
 
 function affichagePanier() {
-  const local_storage = localStorage.getItem("product");
+  const local_storage = localStorage.getItem("products");
 
   if (local_storage === null) {
     //affichage panier vide:

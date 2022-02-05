@@ -71,7 +71,7 @@ function addToCart() {
   //let name = document.getElementsByClassName("name"); (pour futur implémentation du panier?)
   //let image = document.getElementsByClassName("image"); (pour futur implémentation du panier?)
   //console.log(totalPanier);
-  let button = document.getElementById("addToCart-btn");
+  const button = document.getElementById("addToCart-btn");
   let product = {
     id: id_product[0].id,
     size: valeur_selectionnee,
