@@ -43,7 +43,7 @@ function write_product(product) {
         <p class="name">${product.name}</p>
         <p class="price">${product.price}</p>
         <p class="description">${product.description}</p>
-        <button href="#" onclick="addToCart();">
+        <button id="addToCart-btn" href="#" onclick="addToCart();">
         Add To Cart
         </button>  
       </div>
@@ -71,6 +71,7 @@ function addToCart() {
   //let name = document.getElementsByClassName("name"); (pour futur implémentation du panier?)
   //let image = document.getElementsByClassName("image"); (pour futur implémentation du panier?)
   //console.log(totalPanier);
+  let button = document.getElementById("addToCart-btn");
   let product = {
     id: id_product[0].id,
     size: valeur_selectionnee,
