@@ -72,27 +72,28 @@ function addToCart() {
   //let image = document.getElementsByClassName("image"); (pour futur implémentation du panier?)
   //console.log(totalPanier);
   const button = document.getElementById("addToCart-btn");
-  let product = {
-    id: id_product[0].id,
-    size: valeur_selectionnee,
-    price: price_product[0].innerText,
-    qte: valeur_quantitee,
-    total: totalPanier,
-  };
-  // localStorage.setItem("product", JSON.stringify(product));
-  let monPanier = [];
-  if (monPanier != null) {
-    //si mon panier est rempli
-    console.log("le panier est déjà rempli", monPanier);
-    let objetProduct = JSON.parse(products);
-    console.log(objetProduct);
-    localStorage.setItem("products", JSON.stringify(product + objetProduct));
-    monPanier.push(products);
-  } else {
+  let product = [
+    {
+      id: id_product[0].id,
+      size: valeur_selectionnee,
+      price: price_product[0].innerText,
+      qte: valeur_quantitee,
+      total: totalPanier,
+    },
+  ];
+  // localStorage.setItem("products", JSON.stringify(product));
+  if (localStorage.length === 0) {
     //si mon panier est vide
-    console.log("le panier est vide", monPanier);
     localStorage.setItem("products", JSON.stringify(product));
-    monPanier.push(products);
+    console.log("ajouter aux panier", JSON.parse(localStorage.products));
+  } else {
+    //si mon panier est rempli
+    console.log("le panier est déjà rempli");
+    let objetProduct = localStorage.getItem(localStorage.products);
+    JSON.parse(objetProduct);
+    console.log("voici le contenu panier", objetProduct);
+    product.push(objetProduct);
+    localStorage.setItem("products", JSON.stringify(product));
   }
   alert("vôtre commande a été ajouté au panier");
   //condition pour ne pas ajouter des produits sans rien selectionner

@@ -106,6 +106,7 @@ function sendContact() {
   fetch("/order", {
     method: "POST",
     body: contact,
+    products,
   }).then((res) => console.log(res.status));
   alert("vôtre commande à était envoyé!!!");
 }
