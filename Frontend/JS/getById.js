@@ -88,9 +88,7 @@ function addToCart() {
     console.log("ajouter aux panier", JSON.parse(localStorage.products));
   } else {
     //si mon panier est rempli
-    console.log("le panier est déjà rempli");
-    let objetProduct = localStorage.getItem(localStorage.products);
-    JSON.parse(objetProduct);
+    const objetProduct = JSON.parse(localStorage.getItem("products"));
     console.log("voici le contenu panier", objetProduct);
     product.push(objetProduct);
     localStorage.setItem("products", JSON.stringify(product));
