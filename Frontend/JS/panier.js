@@ -63,20 +63,20 @@ function affichagePanier() {
       `;
   } else {
     //affichage panier rempli:
-    console.log("je suis rempli");
-    [local_storage].forEach((element) => {
+    //console.log("je suis rempli");
+    let elementObjet = JSON.parse(local_storage);
+    elementObjet.forEach((element) => {
       console.log(element);
 
-      let elementObjet = JSON.parse(element);
       //avec JSON.parse on transforme un element JSON en objet javascript!!!
-      console.log(elementObjet);
+      // console.log(elementObjet);
 
       document.querySelector("#affPanier").innerHTML += `
       <li class="list-group-item">
-        <span class="idItem">id:${elementObjet.id}</span>
-        <span class="sizeItem">size:${elementObjet.size}</span>
-        <span class="qteItem">quantitee:${elementObjet.qte}</span>
-        <span class="costItem">cost:${elementObjet.total}</span>
+        <span class="idItem">id:${element.id}</span>
+        <span class="sizeItem">size:${element.size}</span>
+        <span class="qteItem">quantitee:${element.qte}</span>
+        <span class="costItem">cost:${element.total}</span>
       </li>
       `;
     });
@@ -107,6 +107,7 @@ function sendContact() {
     method: "POST",
     body: contact,
     products,
-  }).then((res) => console.log(res.status));
+  }).then((res) => console.log(res));
+  //récupérer l'id pour la page confirmation panier
   alert("vôtre commande à était envoyé!!!");
 }
