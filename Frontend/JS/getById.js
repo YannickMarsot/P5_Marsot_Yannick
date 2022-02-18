@@ -50,7 +50,7 @@ function write_product(product) {
     </div>
       `;
 
-  product.lenses.forEach(function (item, index) {
+  product.lenses.forEach(function (item) {
     //dropdown menu
     document.querySelector(
       "#lensesSelect"
@@ -68,30 +68,27 @@ function addToCart() {
   var valeur_selectionnee =
     lenses_selected.options[lenses_selected.selectedIndex].value;
   var totalPanier = valeur_quantitee * price_product[0].innerText;
-  //let name = document.getElementsByClassName("name"); (pour futur implémentation du panier?)
-  //let image = document.getElementsByClassName("image"); (pour futur implémentation du panier?)
-  //console.log(totalPanier);
   const button = document.getElementById("addToCart-btn");
-  let product = [
-    {
-      id: id_product[0].id,
-      size: valeur_selectionnee,
-      price: price_product[0].innerText,
-      qte: valeur_quantitee,
-      total: totalPanier,
-    },
-  ];
-  // localStorage.setItem("products", JSON.stringify(product));
+  let selected_product = {
+    id: id_product[0].id,
+    size: valeur_selectionnee,
+    price: price_product[0].innerText,
+    qte: valeur_quantitee,
+    total: totalPanier,
+  };
+  let monPanier = [];
   if (localStorage.length === 0) {
     //si mon panier est vide
-    localStorage.setItem("products", JSON.stringify(product));
+    monPanier.push(selected_product);
+    localStorage.setItem("products", JSON.stringify(monPanier));
     console.log("ajouter aux panier", JSON.parse(localStorage.products));
   } else {
     //si mon panier est rempli
     const objetProduct = JSON.parse(localStorage.getItem("products"));
     console.log("voici le contenu panier", objetProduct);
-    product.push(objetProduct);
-    localStorage.setItem("products", JSON.stringify(product));
+    monPanier.push(objetProduct);
+    monPanier.push(selected_product);
+    localStorage.setItem("products", JSON.stringify(monPanier));
   }
   alert("vôtre commande a été ajouté au panier");
   //condition pour ne pas ajouter des produits sans rien selectionner
