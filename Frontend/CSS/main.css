@@ -22,6 +22,11 @@ body a {
   text-decoration: none;
   color: black !important;
 }
+body #confirmation-title {
+  text-align: center;
+  margin-top: 25%;
+  margin-bottom: 25%;
+}
 
 .list-product {
   padding-top: 20px;
