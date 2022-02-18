@@ -101,12 +101,16 @@ function sendContact() {
     adress,
     email,
   };
-  console.log(contact, "data verification");
+  const produits = window.localStorage;
+  const data = {
+    contact,
+    produits,
+  };
+  console.log(data, "data verification");
   //utilisation de la methode "POST" afin d'envoyer les données à l'api
   fetch("/order", {
     method: "POST",
-    body: contact,
-    products,
+    body: data,
   }).then((res) => console.log(res));
   //récupérer l'id pour la page confirmation panier
   alert("vôtre commande à était envoyé!!!");
