@@ -9,4 +9,3 @@ _debuguer tout!
 Questions mentor:
 _addToCart (encore!!!!!) pourquoi elle écrase en plus d'ajouter une commande? 
 _affichage panier (encore x2!!!!) "undefined" selon si je rajoute "myCart" ou pas...
-_différence entre "var" et "let" pour demystifier "addToCart"?
