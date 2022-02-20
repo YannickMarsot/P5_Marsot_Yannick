@@ -60,7 +60,7 @@ function write_product(product) {
 
 //ajout au panier
 function addToCart() {
-  let id_product = document.getElementsByClassName("grandConteneur");
+  let id_product = document.getElementsByClassName("grandConteneur"); //id dans "grand conteneur"
   let price_product = document.getElementsByClassName("price");
   var quantity = document.getElementById("quantity");
   var value_quantity = quantity.options[quantity.selectedIndex].value;
@@ -68,7 +68,6 @@ function addToCart() {
   var sizelenses_selected =
     lenses_selected.options[lenses_selected.selectedIndex].value;
   var totalCart = value_quantity * price_product[0].innerText;
-  const button = document.getElementById("addToCart-btn");
   let selected_product = {
     id: id_product[0].id,
     size: sizelenses_selected,
@@ -79,40 +78,50 @@ function addToCart() {
   let myCart = [];
   if (localStorage.length === 0) {
     //si mon panier est vide
-    myCart.push(selected_product);
-    localStorage.setItem("products", JSON.stringify(myCart));
+    //myCart.push(selected_product);
+    localStorage.setItem("products", JSON.stringify(selected_product));
     console.log("ajouter aux panier", JSON.parse(localStorage.products));
   } else {
     //si mon panier est rempli
     const objetProduct = JSON.parse(localStorage.getItem("products"));
-    console.log("voici le contenu panier", objetProduct);
+    console.log("voici le contenu panier", myCart);
     myCart.push(objetProduct);
     myCart.push(selected_product);
     localStorage.setItem("products", JSON.stringify(myCart));
   }
   alert("vôtre commande a été ajouté au panier");
-  //condition pour ne pas ajouter des produits sans rien selectionner
-  if ((value_quantity = 0)) {
-    button.disabled = true;
-  }
-  if ((sizelenses_selected = 0)) {
-    button.disabled = true;
-  }
 }
 
 function select_quantity() {
-  var quantitee = document.getElementById("quantity");
-  var valeur_quantitee = quantitee.options[quantitee.selectedIndex].value;
-  return valeur_quantitee;
-  //console.log(valeur_quantitee);
+  var quantity = document.getElementById("quantity");
+  var value_quantity = quantity.options[quantity.selectedIndex].value;
+  return value_quantity;
+  //console.log(value_quantity);
 }
 
 function select_lenses() {
   var lenses_selected = document.getElementById("lensesSelect");
-  var valeur_selectionnee =
+  var sizeLenses_selected =
     lenses_selected.options[lenses_selected.selectedIndex].value;
-  return valeur_selectionnee;
-  //console.log(valeur_selectionnee);
+  return sizeLenses_selected;
+  //console.log(sizeLenses_selected);
 }
 
+// function button_disabled() {
+//   //fonction pour ne pas ajouter des produits sans rien selectionner
+//   const button = document.getElementById("addToCart-btn");
+//   var quantity = document.getElementById("quantity");
+//   var value_quantity = quantity.option[quantity.selectedIndex].value;
+//   var lenses_selected = document.getElementById("lensesSelect");
+//   var sizeLenses_selected =
+//     lenses_selected.option[lenses_selected.selectedIndex].value;
+//   if ((value_quantity = 0)) {
+//     button.disabled = true;
+//   }
+//   if ((sizeLenses_selected = 0)) {
+//     button.disabled = true;
+//   }
+// }
+
 get_article_by_id();
+//button_disabled();
