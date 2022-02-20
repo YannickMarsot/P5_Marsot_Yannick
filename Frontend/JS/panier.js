@@ -63,14 +63,11 @@ function affichagePanier() {
       `;
   } else {
     //affichage panier rempli:
-    //console.log("je suis rempli");
+    console.log("je suis rempli");
     let elementObjet = JSON.parse(local_storage);
+    //avec JSON.parse on transforme un element JSON en objet javascript!!!
     elementObjet.forEach((element) => {
       console.log(element);
-
-      //avec JSON.parse on transforme un element JSON en objet javascript!!!
-      // console.log(elementObjet);
-
       document.querySelector("#affPanier").innerHTML += `
       <li class="list-group-item">
         <span class="idItem">id:${element.id}</span>
@@ -101,7 +98,7 @@ function sendContact() {
     adress,
     email,
   };
-  const produits = window.localStorage;
+  const produits = JSON.parse(localStorage.getItem("products"));
   const data = {
     contact,
     produits,
