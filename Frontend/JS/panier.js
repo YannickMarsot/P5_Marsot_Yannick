@@ -99,11 +99,12 @@ function sendContact() {
     email,
   };
   const produits = JSON.parse(localStorage.getItem("products"));
+  console.log("console.log de produits:", produits);
   const data = {
     contact,
     produits,
   };
-  console.log(data, "data verification");
+  //console.log(data, "data verification");
   //utilisation de la methode "POST" afin d'envoyer les données à l'api
   fetch("/order", {
     method: "POST",

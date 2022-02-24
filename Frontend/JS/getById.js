@@ -83,10 +83,12 @@ function addToCart() {
     console.log("ajouter aux panier", JSON.parse(localStorage.products));
   } else {
     //si mon panier est rempli
-    const objetProduct = JSON.parse(localStorage.getItem("products"));
-    console.log("voici le contenu panier", myCart);
-    myCart.push(objetProduct);
+    var objectProduct = JSON.parse(localStorage.getItem("products"));
+    console.log("objetProduct", objectProduct);
+    //myCart.pop(objectProduct);
+    myCart.push(objectProduct);
     myCart.push(selected_product);
+    console.log("myCart", myCart);
     localStorage.setItem("products", JSON.stringify(myCart));
   }
   alert("vôtre commande a été ajouté au panier");

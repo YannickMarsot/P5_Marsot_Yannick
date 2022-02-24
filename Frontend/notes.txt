@@ -5,6 +5,11 @@ A faire:
 _mocha (test js)
 _ne pas pouvoir ajouter de produit sans option, 
 _debuguer tout!
+_fichier backend à résoudre
+_envoyer un tableaux produits dans l'objet contact
+_produits.id pour le tableau dans affichage panier (format string)
+_ajout au panier qui se met à jour (prix + quantitée) quand on change la quantitée selectionnée 
+_console.log sur addToCart!!! 
 
 Questions mentor:
 _addToCart (encore!!!!!) pourquoi elle écrase en plus d'ajouter une commande? 
