@@ -9,8 +9,8 @@ _fichier backend à résoudre
 _envoyer un tableaux produits dans l'objet contact
 _produits.id pour le tableau dans affichage panier (format string)
 _ajout au panier qui se met à jour (prix + quantitée) quand on change la quantitée selectionnée 
-_console.log sur addToCart!!! 
+_console.log sur addToCart!!! TROUVE: objectProduct devient un tableau à la 2em iteration et quand on le string 
+on rentre un tableau dans un tableau!!!
 
 Questions mentor:
-_addToCart (encore!!!!!) pourquoi elle écrase en plus d'ajouter une commande? 
-_affichage panier (encore x2!!!!) "undefined" selon si je rajoute "myCart" ou pas...
+_
