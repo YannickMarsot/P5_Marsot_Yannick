@@ -78,18 +78,15 @@ function addToCart() {
   let myCart = [];
   if (localStorage.length === 0) {
     //si mon panier est vide
-    //myCart.push(selected_product);
     localStorage.setItem("products", JSON.stringify(selected_product));
-    console.log("ajouter aux panier", JSON.parse(localStorage.products));
   } else {
     //si mon panier est rempli
     var objectProduct = JSON.parse(localStorage.getItem("products"));
-    console.log("objetProduct", objectProduct);
-    //myCart.pop(objectProduct);
     myCart.push(objectProduct);
+    //a la 2em itération objetproduct est un tableau
     myCart.push(selected_product);
-    console.log("myCart", myCart);
     localStorage.setItem("products", JSON.stringify(myCart));
+    //en stringifiant myCart à la 3em itération on rajoute un tableau dans un tableau et ainsi de suite!!!
   }
   alert("vôtre commande a été ajouté au panier");
 }
