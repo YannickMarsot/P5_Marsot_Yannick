@@ -57,9 +57,18 @@ function write_product(product) {
     ).innerHTML += `<option value="${item}" class="quantity_choices">${item}</option>`;
   });
 }
-
+//check product exist
+function checkProductExist() {
+  let product = localStorage.getItem("products");
+  if (product.length == 0) {
+    return 0;
+  } else {
+    return JSON.stringify(product);
+  }
+}
 //ajout au panier
 function addToCart() {
+  let check_panier = checkProductExist();
   let id_product = document.getElementsByClassName("grandConteneur"); //id dans "grand conteneur"
   let price_product = document.getElementsByClassName("price");
   var quantity = document.getElementById("quantity");
@@ -76,6 +85,17 @@ function addToCart() {
     total: totalCart,
   };
   let myCart = [];
+
+  if (check_panier != 0) {
+    //j'ai un produit existant
+    console.log(check_panier);
+    myCart.push(check_panier);
+    console.log(myCart);
+  } else {
+    localStorage.setItem("products", JSON.stringify(selected_product));
+  }
+
+  /*
   if (localStorage.length === 0) {
     //si mon panier est vide
     localStorage.setItem("products", JSON.stringify(selected_product));
@@ -87,7 +107,7 @@ function addToCart() {
     myCart.push(selected_product);
     localStorage.setItem("products", JSON.stringify(myCart));
     //en stringifiant myCart à la 3em itération on rajoute un tableau dans un tableau et ainsi de suite!!!
-  }
+  }*/
   alert("vôtre commande a été ajouté au panier");
 }
 
