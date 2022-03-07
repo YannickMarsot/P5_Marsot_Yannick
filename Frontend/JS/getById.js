@@ -57,16 +57,9 @@ function write_product(product) {
     ).innerHTML += `<option value="${item}" class="quantity_choices">${item}</option>`;
   });
 }
-//check product exist
-function checkProductExist() {
-  let product = localStorage.getItem("products");
-  if (product.length == 0) {
-    return 0;
-  } else {
-    return JSON.stringify(product);
-  }
-}
+
 //ajout au panier
+
 //check product exist
 function checkProductExist() {
   const product = localStorage.getItem("products");
