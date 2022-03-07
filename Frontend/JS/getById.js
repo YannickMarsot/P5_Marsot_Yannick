@@ -59,19 +59,11 @@ function write_product(product) {
 }
 
 //ajout au panier
-
+const cart = JSON.parse(localStorage.getItem("cameras")) || [];
 //check product exist
-function checkProductExist() {
-  const product = localStorage.getItem("products");
-  if (product) {
-    return product;
-  } else {
-    return false;
-  }
-}
 
+//fonction dajout au panier
 function addToCart() {
-  let cart_exist = checkProductExist();
   let id_product = document.getElementsByClassName("grandConteneur"); //id dans "grand conteneur"
   let price_product = document.getElementsByClassName("price");
   var quantity = document.getElementById("quantity");
@@ -85,17 +77,50 @@ function addToCart() {
     price: price_product[0].innerText,
     qte: value_quantity,
   };
-  let myCart = [];
 
-  if (cart_exist == false) {
-    localStorage.setItem("products", JSON.stringify(selected_product));
+  if (cart.length < 1) {
+    cart.push(selected_product);
+    localStorage.setItem("cameras", JSON.stringify(cart));
   } else {
-    myCart.push(cart_exist);
-    myCart.push(JSON.stringify(selected_product));
-    localStorage.setItem("products", myCart);
+    cart.push(selected_product);
+    localStorage.setItem("cameras", JSON.stringify(cart));
   }
-  alert("vôtre commande a été ajouté au panier");
 }
+// function checkProductExist() {
+//   const product = localStorage.getItem("products");
+//   if (product) {
+//     return product;
+//   } else {
+//     return false;
+//   }
+// }
+
+// function addToCart() {
+//   let cart_exist = checkProductExist();
+//   let id_product = document.getElementsByClassName("grandConteneur"); //id dans "grand conteneur"
+//   let price_product = document.getElementsByClassName("price");
+//   var quantity = document.getElementById("quantity");
+//   var value_quantity = quantity.options[quantity.selectedIndex].value;
+//   var lenses_selected = document.getElementById("lensesSelect");
+//   var sizelenses_selected =
+//     lenses_selected.options[lenses_selected.selectedIndex].value;
+//   let selected_product = {
+//     id: id_product[0].id,
+//     size: sizelenses_selected,
+//     price: price_product[0].innerText,
+//     qte: value_quantity,
+//   };
+//   let myCart = [];
+
+//   if (cart_exist == false) {
+//     localStorage.setItem("products", JSON.stringify(selected_product));
+//   } else {
+//     myCart.push(JSON.parse(cart_exist));
+//     myCart.push(selected_product);
+//     localStorage.setItem("products", JSON.stringify(myCart));
+//   }
+//   alert("vôtre commande a été ajouté au panier");
+// }
 
 function select_quantity() {
   var quantity = document.getElementById("quantity");
