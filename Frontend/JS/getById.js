@@ -67,8 +67,18 @@ function checkProductExist() {
   }
 }
 //ajout au panier
+//check product exist
+function checkProductExist() {
+  const product = localStorage.getItem("products");
+  if (product) {
+    return product;
+  } else {
+    return false;
+  }
+}
+
 function addToCart() {
-  let check_panier = checkProductExist();
+  let cart_exist = checkProductExist();
   let id_product = document.getElementsByClassName("grandConteneur"); //id dans "grand conteneur"
   let price_product = document.getElementsByClassName("price");
   var quantity = document.getElementById("quantity");
@@ -76,38 +86,21 @@ function addToCart() {
   var lenses_selected = document.getElementById("lensesSelect");
   var sizelenses_selected =
     lenses_selected.options[lenses_selected.selectedIndex].value;
-  var totalCart = value_quantity * price_product[0].innerText;
   let selected_product = {
     id: id_product[0].id,
     size: sizelenses_selected,
     price: price_product[0].innerText,
     qte: value_quantity,
-    total: totalCart,
   };
   let myCart = [];
 
-  if (check_panier != 0) {
-    //j'ai un produit existant
-    console.log(check_panier);
-    myCart.push(check_panier);
-    console.log(myCart);
-  } else {
+  if (cart_exist == false) {
     localStorage.setItem("products", JSON.stringify(selected_product));
+  } else {
+    myCart.push(cart_exist);
+    myCart.push(JSON.stringify(selected_product));
+    localStorage.setItem("products", myCart);
   }
-
-  /*
-  if (localStorage.length === 0) {
-    //si mon panier est vide
-    localStorage.setItem("products", JSON.stringify(selected_product));
-  } else {
-    //si mon panier est rempli
-    var objectProduct = JSON.parse(localStorage.getItem("products"));
-    myCart.push(objectProduct);
-    //a la 2em itération objetproduct est un tableau
-    myCart.push(selected_product);
-    localStorage.setItem("products", JSON.stringify(myCart));
-    //en stringifiant myCart à la 3em itération on rajoute un tableau dans un tableau et ainsi de suite!!!
-  }*/
   alert("vôtre commande a été ajouté au panier");
 }
 
