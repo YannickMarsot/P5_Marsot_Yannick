@@ -50,14 +50,14 @@ function validateEmail() {
   return false;
 }
 
-//affichage panier
+//affichage panier  (AJOUTER LA GESTION DES QTE DANS LE PANIER + AFFICHER ME TOTAL € DE NOTRE PANIER)
 
 function affichagePanier() {
   const local_storage = localStorage.getItem("products");
 
   if (local_storage === null) {
     //affichage panier vide:
-    console.log("je suis vide");
+    //console.log("je suis vide");
     document.querySelector("#petitContainerAffichagePanier").innerHTML = `
           <p>Pour l'instant vôtre panier est vide</p>
       `;
@@ -65,15 +65,16 @@ function affichagePanier() {
     //affichage panier rempli:
     console.log("je suis rempli");
     let elementObjet = JSON.parse(local_storage);
+    console.log(elementObjet);
     //avec JSON.parse on transforme un element JSON en objet javascript!!!
-    elementObjet.forEach((element) => {
-      console.log(element);
+    [elementObjet].forEach((element) => {
+      let total = element.qte * element.price;
       document.querySelector("#affPanier").innerHTML += `
       <li class="list-group-item">
         <span class="idItem">id:${element.id}</span>
         <span class="sizeItem">size:${element.size}</span>
         <span class="qteItem">quantitee:${element.qte}</span>
-        <span class="costItem">cost:${element.total}</span>
+        <span class="costItem">cost:${total}</span>
       </li>
       `;
     });
@@ -83,33 +84,54 @@ function affichagePanier() {
 affichagePanier();
 
 //envoyer les données à l'api
+function getLocalStorage() {
+  const getProduct = JSON.parse(localStorage.getItem("products"));
+  if (getProduct) {
+    return getProduct;
+  } else {
+    return false;
+  }
+}
 
 function sendContact() {
   let firstName = document.getElementById("text_prenom").value;
   let lastName = document.getElementById("text_nom").value;
   let city = document.getElementById("City").value;
-  let adress = document.getElementById("adress").value;
+  let address = document.getElementById("adress").value;
   let email = document.getElementById("e-mail").value;
   console.log(firstName, "sendData verification");
   let contact = {
     firstName,
     lastName,
     city,
-    adress,
+    address,
     email,
   };
-  const produits = JSON.parse(localStorage.getItem("products"));
-  console.log("console.log de produits:", produits);
+  const produits = getLocalStorage();
+  console.log(produits);
+  let products = [];
+  //Faire une boucle pour push chaque id de produit
+  [produits].forEach((element) => console.log(element.id));
+  //products.push(element.id)
+  //products.push(produits.id)
+
   const data = {
     contact,
-    produits,
+    products,
   };
-  //console.log(data, "data verification");
   //utilisation de la methode "POST" afin d'envoyer les données à l'api
-  fetch("/order", {
+  fetch("http://127.0.0.1:3000/api/cameras/order", {
     method: "POST",
-    body: data,
-  }).then((res) => console.log(res));
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+    mode: "cors",
+  }).then((res) => {
+    //Faire une redirection sur la page de confirmation avec un paramètre dans l'url (order_id)
+    console.log(res);
+  });
   //récupérer l'id pour la page confirmation panier
   alert("vôtre commande à était envoyé!!!");
 }
