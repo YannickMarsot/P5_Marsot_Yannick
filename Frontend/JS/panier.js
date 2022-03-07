@@ -53,8 +53,7 @@ function validateEmail() {
 //affichage panier  (AJOUTER LA GESTION DES QTE DANS LE PANIER + AFFICHER ME TOTAL € DE NOTRE PANIER)
 
 function affichagePanier() {
-  const local_storage = localStorage.getItem("products");
-
+  const local_storage = localStorage.getItem("cameras");
   if (local_storage === null) {
     //affichage panier vide:
     //console.log("je suis vide");
@@ -65,9 +64,10 @@ function affichagePanier() {
     //affichage panier rempli:
     console.log("je suis rempli");
     let elementObjet = JSON.parse(local_storage);
-    console.log(elementObjet);
+    console.log("elementObjet", elementObjet);
     //avec JSON.parse on transforme un element JSON en objet javascript!!!
-    [elementObjet].forEach((element) => {
+    elementObjet.forEach((element) => {
+      console.log(element);
       let total = element.qte * element.price;
       document.querySelector("#affPanier").innerHTML += `
       <li class="list-group-item">
@@ -85,7 +85,7 @@ affichagePanier();
 
 //envoyer les données à l'api
 function getLocalStorage() {
-  const getProduct = JSON.parse(localStorage.getItem("products"));
+  const getProduct = JSON.parse(localStorage.getItem("cameras"));
   if (getProduct) {
     return getProduct;
   } else {
