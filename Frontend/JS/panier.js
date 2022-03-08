@@ -111,9 +111,7 @@ function sendContact() {
   console.log(produits);
   let products = [];
   //Faire une boucle pour push chaque id de produit
-  [produits].forEach((element) => console.log(element.id));
-  //products.push(element.id)
-  //products.push(produits.id)
+  produits.forEach((element) => products.push(element.id));
 
   const data = {
     contact,
