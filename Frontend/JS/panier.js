@@ -67,15 +67,24 @@ function affichagePanier() {
     console.log("elementObjet", elementObjet);
     //avec JSON.parse on transforme un element JSON en objet javascript!!!
     elementObjet.forEach((element) => {
-      console.log(element);
+      console.log(element.index);
       let total = element.qte * element.price;
       document.querySelector("#affPanier").innerHTML += `
-      <li class="list-group-item">
-        <span class="idItem">id:${element.id}</span>
-        <span class="sizeItem">size:${element.size}</span>
-        <span class="qteItem">quantitee:${element.qte}</span>
-        <span class="costItem">cost:${total}</span>
-      </li>
+      <tr>
+        <th scope="row">${element.index}</th>
+        <td>${element.id}</td>
+        <td>${element.size}</td>
+        <td class="align-middle productQuantity">
+          <button type="button" class="rounded minus data-toggle="modal" data-target="#exampleModal" data-index="${element.qte}">
+            <span class="fas fa-minus-square text-danger" data-index="${element.qte}"></span>
+          </button>
+          <span class="mx-0 mx-lg-3"> ${element.qte}</span>
+          <button type="button" class="rounded plus" data-toggle="modal" data-target="#exampleModal" data-index="${element.qte}">
+            <span class="fas fa-plus-square text-success" data-index="${element.qte}"></span>
+          </button>
+        </td>
+        <td>${total}</td>
+      </tr>
       `;
     });
   }
@@ -131,5 +140,5 @@ function sendContact() {
     console.log(res);
   });
   //récupérer l'id pour la page confirmation panier
-  alert("vôtre commande à était envoyé!!!");
+  //alert("vôtre commande à était envoyé!!!");
 }
