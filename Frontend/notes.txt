@@ -6,11 +6,9 @@ _mocha (test js)
 _ne pas pouvoir ajouter de produit sans option, 
 _debuguer tout!
 _fichier backend à résoudre
-_envoyer un tableaux produits dans l'objet contact
 _produits.id pour le tableau dans affichage panier (format string)
 _ajout au panier qui se met à jour (prix + quantitée) quand on change la quantitée selectionnée 
-_console.log sur addToCart!!! TROUVE: objectProduct devient un tableau à la 2em iteration et quand on le string 
-on rentre un tableau dans un tableau!!!
 
 Questions mentor:
-_
+_Est ce que si je declare une fonction dans un fichier "fonction.js" je peut fare appel à cette fonction 
+dans un autre fichier? (un peu comme sass)

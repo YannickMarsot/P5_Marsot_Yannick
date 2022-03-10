@@ -85,6 +85,7 @@ function addToCart() {
     cart.push(selected_product);
     localStorage.setItem("cameras", JSON.stringify(cart));
   }
+  alert("vôtre commande a été ajouté au panier");
 }
 // function checkProductExist() {
 //   const product = localStorage.getItem("products");

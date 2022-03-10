@@ -8,7 +8,7 @@ function getOrderId() {
   //fonction pour afficher l'article souhaiter avec le parametre URL
   const orderId = getParameter("orderId");
   console.log(orderId);
-  fetch("http://http://127.0.0.1:5500/Frontend/confirmation.html" + orderId)
+  fetch("http://127.0.0.1:3000/api/cameras/order" + orderId)
     .then((res) => res.json())
     .then((res) => {
       write_product(res);
