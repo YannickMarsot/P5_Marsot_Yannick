@@ -2,13 +2,12 @@ url api:
 http://localhost:3000/api/cameras
 
 A faire: 
-_mocha (test js)
 _ne pas pouvoir ajouter de produit sans option, 
-_debuguer tout!
 _fichier backend à résoudre
 _fichier "variable.js" a créer pour une meilleure structure 
-_ne pas ajouter de produits dans le local storage sans de lentilles ou de qte selectionné
 _cohérence linguistique et balise à renommer (MEILLEURE STRUCTURE!!!!)
+_debuguer tout!
+_mocha (test js)
 
 
 Questions mentor:
