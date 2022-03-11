@@ -111,7 +111,6 @@ function addProduct(event) {
 function delProduct(event) {
   const index = event.target.getAttribute("data-index");
   console.log(index);
-  elementObjet[index].qte--;
   if (elementObjet[index].qte > 1) {
     elementObjet[index].qte--;
   } else {
