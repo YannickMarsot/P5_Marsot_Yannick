@@ -6,9 +6,13 @@ _mocha (test js)
 _ne pas pouvoir ajouter de produit sans option, 
 _debuguer tout!
 _fichier backend à résoudre
-_produits.id pour le tableau dans affichage panier (format string)
-_ajout au panier qui se met à jour (prix + quantitée) quand on change la quantitée selectionnée 
+_fichier "variable.js" a créer pour une meilleure structure 
+_ne pas ajouter de produits dans le local storage sans de lentilles ou de qte selectionné
+_cohérence linguistique et balise à renommer (MEILLEURE STRUCTURE!!!!)
+
 
 Questions mentor:
 _Est ce que si je declare une fonction dans un fichier "fonction.js" je peut fare appel à cette fonction 
 dans un autre fichier? (un peu comme sass)
+_pourquoi le boutton "disabled" ne marche pas
+_parametre URL ne marche pas
