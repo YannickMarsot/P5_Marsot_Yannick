@@ -52,9 +52,17 @@ function validateEmail() {
 
 //affichage panier  (AJOUTER LA GESTION DES QTE DANS LE PANIER + AFFICHER ME TOTAL € DE NOTRE PANIER)
 
+function getLocalStorage() {
+  const getProduct = JSON.parse(localStorage.getItem("cameras"));
+  if (getProduct) {
+    return getProduct;
+  } else {
+    return false;
+  }
+}
+const elementObjet = JSON.parse(localStorage.getItem("cameras"));
 function affichagePanier() {
-  const local_storage = localStorage.getItem("cameras");
-  if (local_storage === null) {
+  if (elementObjet === null) {
     //affichage panier vide:
     //console.log("je suis vide");
     document.querySelector("#petitContainerAffichagePanier").innerHTML = `
@@ -63,24 +71,24 @@ function affichagePanier() {
   } else {
     //affichage panier rempli:
     console.log("je suis rempli");
-    let elementObjet = JSON.parse(local_storage);
     console.log("elementObjet", elementObjet);
     //avec JSON.parse on transforme un element JSON en objet javascript!!!
     elementObjet.forEach((element) => {
-      console.log(element.index);
+      const indexProduct = elementObjet.indexOf(element);
+      console.log("indexProduct", indexProduct);
       let total = element.qte * element.price;
       document.querySelector("#affPanier").innerHTML += `
       <tr>
-        <th scope="row">${element.index}</th>
+        <th scope="row">${indexProduct + 1}</th>
         <td>${element.id}</td>
         <td>${element.size}</td>
         <td class="align-middle productQuantity">
-          <button type="button" class="rounded minus data-toggle="modal" data-target="#exampleModal" data-index="${element.qte}">
-            <span class="fas fa-minus-square text-danger" data-index="${element.qte}"></span>
+          <button type="button" class="rounded minus data-toggle="modal" data-target="#exampleModal" data-index="${indexProduct}" onclick="delProduct(event)">
+            <span class="fas fa-minus-square text-danger" data-index="${indexProduct}"></span>
           </button>
-          <span class="mx-0 mx-lg-3"> ${element.qte}</span>
-          <button type="button" class="rounded plus" data-toggle="modal" data-target="#exampleModal" data-index="${element.qte}">
-            <span class="fas fa-plus-square text-success" data-index="${element.qte}"></span>
+          <span class="mx-0 mx-lg-3 index"> ${element.qte}</span>
+          <button type="button" class="rounded plus" data-toggle="modal" data-target="#exampleModal" data-index="${indexProduct}" onclick="addProduct(event)">
+            <span class="fas fa-plus-square text-success" data-index="${indexProduct}"></span>
           </button>
         </td>
         <td>${total}</td>
@@ -90,17 +98,32 @@ function affichagePanier() {
   }
 }
 
+//fonction pour ajouter un produit depuis le panier
+function addProduct(event) {
+  const index = event.target.getAttribute("data-index");
+  console.log(index);
+  elementObjet[index].qte++;
+  localStorage.setItem("cameras", JSON.stringify(elementObjet));
+  location.reload();
+}
+
+//fonction pour supprimer un produit depuis le panier
+function delProduct(event) {
+  const index = event.target.getAttribute("data-index");
+  console.log(index);
+  elementObjet[index].qte--;
+  if (elementObjet[index].qte > 1) {
+    elementObjet[index].qte--;
+  } else {
+    elementObjet.splice(index, 1);
+  }
+  localStorage.setItem("cameras", JSON.stringify(elementObjet));
+  location.reload();
+}
+
 affichagePanier();
 
 //envoyer les données à l'api
-function getLocalStorage() {
-  const getProduct = JSON.parse(localStorage.getItem("cameras"));
-  if (getProduct) {
-    return getProduct;
-  } else {
-    return false;
-  }
-}
 
 function sendContact() {
   let firstName = document.getElementById("text_prenom").value;
