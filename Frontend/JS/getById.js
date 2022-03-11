@@ -60,9 +60,10 @@ function write_product(product) {
 
 //ajout au panier
 const cart = JSON.parse(localStorage.getItem("cameras")) || [];
-//check product exist
 
 //fonction dajout au panier
+// const button = document.getElementById("addToCart-btn");
+// button.setAttribute("disabled");
 function addToCart() {
   let id_product = document.getElementsByClassName("grandConteneur"); //id dans "grand conteneur"
   let price_product = document.getElementsByClassName("price");
@@ -86,6 +87,14 @@ function addToCart() {
     localStorage.setItem("cameras", JSON.stringify(cart));
   }
   alert("vôtre commande a été ajouté au panier");
+
+  //afin d'eviter de rajouter des produits = 0
+  // if (value_quantity != 0) {
+  //   button.disabled = false;
+  // }
+  // if (sizeLenses_selected != 0) {
+  //   button.disabled = false;
+  // }
 }
 // function checkProductExist() {
 //   const product = localStorage.getItem("products");
@@ -123,29 +132,33 @@ function addToCart() {
 //   alert("vôtre commande a été ajouté au panier");
 // }
 
-function select_quantity() {
-  var quantity = document.getElementById("quantity");
-  var value_quantity = quantity.options[quantity.selectedIndex].value;
-  return value_quantity;
-  //console.log(value_quantity);
-}
+// function select_quantity() {
+//   var quantity = document.getElementById("quantity");
+//   var value_quantity = quantity.options[quantity.selectedIndex].value;
+//   return value_quantity;
+//   console.log(value_quantity);
+// }
 
-function select_lenses() {
-  var lenses_selected = document.getElementById("lensesSelect");
-  var sizeLenses_selected =
-    lenses_selected.options[lenses_selected.selectedIndex].value;
-  return sizeLenses_selected;
-  //console.log(sizeLenses_selected);
-}
+// function select_lenses() {
+//   var lenses_selected = document.getElementById("lensesSelect");
+//   var sizeLenses_selected =
+//     lenses_selected.options[lenses_selected.selectedIndex].value;
+//   return sizeLenses_selected;
+//   console.log(sizeLenses_selected);
+// }
 
 // function button_disabled() {
 //   //fonction pour ne pas ajouter des produits sans rien selectionner
 //   const button = document.getElementById("addToCart-btn");
 //   var quantity = document.getElementById("quantity");
-//   var value_quantity = quantity.option[quantity.selectedIndex].value;
+//   console.log("quantity-btn", quantity);
+//   var value_quantity = quantity.options[quantity.selectedIndex].value;
+//   console.log("quantity-btn-value", value_quantity);
 //   var lenses_selected = document.getElementById("lensesSelect");
+//   console.log("lenses_selected", lenses_selected);
 //   var sizeLenses_selected =
 //     lenses_selected.option[lenses_selected.selectedIndex].value;
+//   console.log("lenses-selected-size", sizeLenses_selected);
 //   if ((value_quantity = 0)) {
 //     button.disabled = true;
 //   }
@@ -155,4 +168,4 @@ function select_lenses() {
 // }
 
 get_article_by_id();
-//button_disabled();
+// button_disabled();
