@@ -157,10 +157,15 @@ function sendContact() {
     },
     body: JSON.stringify(data),
     mode: "cors",
-  }).then((res) => {
-    //Faire une redirection sur la page de confirmation avec un paramètre dans l'url (order_id)
-    console.log(res);
-  });
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res.orderId);
+      const OrderId = res.orderId;
+      window.location = "confirmation.html";
+      return orderId;
+    });
+
   //récupérer l'id pour la page confirmation panier
   //alert("vôtre commande à était envoyé!!!");
 }

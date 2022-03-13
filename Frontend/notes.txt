@@ -4,14 +4,16 @@ http://localhost:3000/api/cameras
 A faire: 
 _ne pas pouvoir ajouter de produit sans option, 
 _fichier backend à résoudre
-_fichier "variable.js" a créer pour une meilleure structure 
 _cohérence linguistique et balise à renommer (MEILLEURE STRUCTURE!!!!)
 _debuguer tout!
 _mocha (test js)
+_remplacer les var par des let
+_enlever les commentaires inutiles
+
 
 
 Questions mentor:
 _Est ce que si je declare une fonction dans un fichier "fonction.js" je peut fare appel à cette fonction 
 dans un autre fichier? (un peu comme sass)
 _pourquoi le boutton "disabled" ne marche pas
-_parametre URL ne marche pas
+_quelle URL il faut utilisé pour récupéré "orderId"

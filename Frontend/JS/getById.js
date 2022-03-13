@@ -62,8 +62,8 @@ function write_product(product) {
 const cart = JSON.parse(localStorage.getItem("cameras")) || [];
 
 //fonction dajout au panier
-// const button = document.getElementById("addToCart-btn");
-// button.setAttribute("disabled");
+const button = document.getElementById("addToCart-btn");
+button.setAttribute("disabled");
 function addToCart() {
   let id_product = document.getElementsByClassName("grandConteneur"); //id dans "grand conteneur"
   let price_product = document.getElementsByClassName("price");
@@ -89,48 +89,13 @@ function addToCart() {
   alert("vôtre commande a été ajouté au panier");
 
   //afin d'eviter de rajouter des produits = 0
-  // if (value_quantity != 0) {
-  //   button.disabled = false;
-  // }
-  // if (sizeLenses_selected != 0) {
-  //   button.disabled = false;
-  // }
+  if (value_quantity != 0) {
+    button.disabled = false;
+  }
+  if (sizeLenses_selected != 0) {
+    button.disabled = false;
+  }
 }
-// function checkProductExist() {
-//   const product = localStorage.getItem("products");
-//   if (product) {
-//     return product;
-//   } else {
-//     return false;
-//   }
-// }
-
-// function addToCart() {
-//   let cart_exist = checkProductExist();
-//   let id_product = document.getElementsByClassName("grandConteneur"); //id dans "grand conteneur"
-//   let price_product = document.getElementsByClassName("price");
-//   var quantity = document.getElementById("quantity");
-//   var value_quantity = quantity.options[quantity.selectedIndex].value;
-//   var lenses_selected = document.getElementById("lensesSelect");
-//   var sizelenses_selected =
-//     lenses_selected.options[lenses_selected.selectedIndex].value;
-//   let selected_product = {
-//     id: id_product[0].id,
-//     size: sizelenses_selected,
-//     price: price_product[0].innerText,
-//     qte: value_quantity,
-//   };
-//   let myCart = [];
-
-//   if (cart_exist == false) {
-//     localStorage.setItem("products", JSON.stringify(selected_product));
-//   } else {
-//     myCart.push(JSON.parse(cart_exist));
-//     myCart.push(selected_product);
-//     localStorage.setItem("products", JSON.stringify(myCart));
-//   }
-//   alert("vôtre commande a été ajouté au panier");
-// }
 
 // function select_quantity() {
 //   var quantity = document.getElementById("quantity");
@@ -147,25 +112,25 @@ function addToCart() {
 //   console.log(sizeLenses_selected);
 // }
 
-// function button_disabled() {
-//   //fonction pour ne pas ajouter des produits sans rien selectionner
-//   const button = document.getElementById("addToCart-btn");
-//   var quantity = document.getElementById("quantity");
-//   console.log("quantity-btn", quantity);
-//   var value_quantity = quantity.options[quantity.selectedIndex].value;
-//   console.log("quantity-btn-value", value_quantity);
-//   var lenses_selected = document.getElementById("lensesSelect");
-//   console.log("lenses_selected", lenses_selected);
-//   var sizeLenses_selected =
-//     lenses_selected.option[lenses_selected.selectedIndex].value;
-//   console.log("lenses-selected-size", sizeLenses_selected);
-//   if ((value_quantity = 0)) {
-//     button.disabled = true;
-//   }
-//   if ((sizeLenses_selected = 0)) {
-//     button.disabled = true;
-//   }
-// }
+function button_disabled() {
+  //fonction pour ne pas ajouter des produits sans rien selectionner
+  const button = document.getElementById("addToCart-btn");
+  var quantity = document.getElementById("quantity");
+  console.log("quantity-btn", quantity);
+  var value_quantity = quantity.options[quantity.selectedIndex].value;
+  console.log("quantity-btn-value", value_quantity);
+  var lenses_selected = document.getElementById("lensesSelect");
+  console.log("lenses_selected", lenses_selected);
+  var sizeLenses_selected =
+    lenses_selected.option[lenses_selected.selectedIndex].value;
+  console.log("lenses-selected-size", sizeLenses_selected);
+  if ((value_quantity = 0)) {
+    button.disabled = true;
+  }
+  if ((sizeLenses_selected = 0)) {
+    button.disabled = true;
+  }
+}
 
 get_article_by_id();
-// button_disabled();
+button_disabled();
