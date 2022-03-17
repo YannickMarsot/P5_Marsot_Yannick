@@ -11,8 +11,16 @@ function getOrderId() {
   fetch("http://127.0.0.1:3000/api/cameras/order" + orderId)
     .then((res) => res.json())
     .then((res) => {
-      write_product(res);
+      writeOrder(res);
     });
+}
+
+function writeOrder(orderId) {
+  //fonction pour afficher le nuéro de commande
+  document.querySelector("#confirmation-text").innerHTML = `
+  Merci d'avoir commandé chez nous, <br> vôtre commande numéro ${orderId}
+  arrivera bientôt chez vous! 
+  `;
 }
 
 getOrderId();

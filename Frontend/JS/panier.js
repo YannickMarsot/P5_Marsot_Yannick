@@ -50,32 +50,20 @@ function validateEmail() {
   return false;
 }
 
-//affichage panier  (AJOUTER LA GESTION DES QTE DANS LE PANIER + AFFICHER ME TOTAL € DE NOTRE PANIER)
-
-function getLocalStorage() {
-  const getProduct = JSON.parse(localStorage.getItem("cameras"));
-  if (getProduct) {
-    return getProduct;
-  } else {
-    return false;
-  }
-}
+//avec JSON.parse on transforme un element JSON en objet javascript!!!
 const elementObjet = JSON.parse(localStorage.getItem("cameras"));
-function affichagePanier() {
+
+//fonction qui affiche le panier
+function writeCart() {
   if (elementObjet === null) {
     //affichage panier vide:
-    //console.log("je suis vide");
     document.querySelector("#petitContainerAffichagePanier").innerHTML = `
           <p>Pour l'instant vôtre panier est vide</p>
       `;
   } else {
     //affichage panier rempli:
-    console.log("je suis rempli");
-    console.log("elementObjet", elementObjet);
-    //avec JSON.parse on transforme un element JSON en objet javascript!!!
     elementObjet.forEach((element) => {
       const indexProduct = elementObjet.indexOf(element);
-      console.log("indexProduct", indexProduct);
       let total = element.qte * element.price;
       document.querySelector("#affPanier").innerHTML += `
       <tr>
@@ -101,7 +89,6 @@ function affichagePanier() {
 //fonction pour ajouter un produit depuis le panier
 function addProduct(event) {
   const index = event.target.getAttribute("data-index");
-  console.log(index);
   elementObjet[index].qte++;
   localStorage.setItem("cameras", JSON.stringify(elementObjet));
   location.reload();
@@ -110,7 +97,6 @@ function addProduct(event) {
 //fonction pour supprimer un produit depuis le panier
 function delProduct(event) {
   const index = event.target.getAttribute("data-index");
-  console.log(index);
   if (elementObjet[index].qte > 1) {
     elementObjet[index].qte--;
   } else {
@@ -158,11 +144,11 @@ function sendContact() {
     .then((res) => res.json())
     .then((res) => {
       console.log(res.orderId);
-      const OrderId = res.orderId;
-      window.location = "confirmation.html";
+      const orderId = res.orderId;
+      window.location = "confirmation.html?order=${orderId}";
       return orderId;
+      console.log("orderId=", orderId);
     });
 
   //récupérer l'id pour la page confirmation panier
-  //alert("vôtre commande à était envoyé!!!");
 }
