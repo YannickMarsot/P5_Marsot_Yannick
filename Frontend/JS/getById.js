@@ -23,15 +23,15 @@ function write_product(product) {
         <img src="${product.imageUrl}">
       </div>
       <div class="lensesConteneur">
-        <label for="lenses">Choose a lense</label>
+        <label for="lenses">Choisissé vôtre lentille</label>
           <select name="Lenses" id="lensesSelect" onChange="select_lenses();">  
-          <option value="0" selected="selected" disabled>select an option</option>        
+          <option value="0" selected="selected" disabled>selectionné une option</option>        
           </select>
       </div>
       <div class="quantityConteneur">
-        <label for="quantity">Select quantity</label>
+        <label for="quantity">Selectionné la quantitée</label>
           <select id="quantity" onchange="select_quantity();">
-            <option value="0"selected="selected" disabled>select an option</option>
+            <option value="0"selected="selected" disabled>selectionné une option</option>
             <option value="1" class="quantity_choices">1</option>
             <option value="2" class="quantity_choices">2</option>
             <option value="3" class="quantity_choices">3</option>
@@ -44,7 +44,7 @@ function write_product(product) {
         <p class="price">${product.price}</p>
         <p class="description">${product.description}</p>
         <button id="addToCart-btn" href="#" onclick="addToCart();">
-        Add To Cart
+        Ajouter au panier
         </button>  
       </div>
     </div>

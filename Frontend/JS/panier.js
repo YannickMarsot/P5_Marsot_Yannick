@@ -1,6 +1,6 @@
 //REGEX
 
-function validatePrenom() {
+function validateFirstName() {
   //fonction pour valider le prenom saisi
   let text = document.getElementById("text_prenom");
   if (/^([A-Za-z]{2,20})+$/.test(text.value)) {
@@ -10,7 +10,7 @@ function validatePrenom() {
   return false;
 }
 
-function validateNom() {
+function validateLastName() {
   //fonction pour valider le nom saisi
   let text = document.getElementById("text_nom");
   if (/^([A-Za-z]{2,20})+$/.test(text.value)) {
@@ -20,7 +20,7 @@ function validateNom() {
   return false;
 }
 
-function validateVille() {
+function validateCity() {
   //fonction pour valider la ville saisi
   let text = document.getElementById("City");
   if (/^([a-zA-Z\u0080-\u024F\s\/\-\)\(\`\.\"\'])+$/.test(text.value)) {
@@ -120,30 +120,27 @@ function delProduct(event) {
   location.reload();
 }
 
-affichagePanier();
-
-//envoyer les données à l'api
+writeCart();
 
 function sendContact() {
-  let firstName = document.getElementById("text_prenom").value;
-  let lastName = document.getElementById("text_nom").value;
+  //envoyer les données à l'api
+  let first_name = document.getElementById("text_prenom").value;
+  let last_name = document.getElementById("text_nom").value;
   let city = document.getElementById("City").value;
   let address = document.getElementById("adress").value;
   let email = document.getElementById("e-mail").value;
-  console.log(firstName, "sendData verification");
+  console.log(first_name, "sendData verification");
   let contact = {
-    firstName,
-    lastName,
+    first_name,
+    last_name,
     city,
     address,
     email,
   };
   const produits = getLocalStorage();
-  console.log(produits);
   let products = [];
   //Faire une boucle pour push chaque id de produit
   produits.forEach((element) => products.push(element.id));
-
   const data = {
     contact,
     products,
