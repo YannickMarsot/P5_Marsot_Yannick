@@ -108,6 +108,15 @@ function delProduct(event) {
 
 writeCart();
 
+function getLocalStorage() {
+  const getProduct = JSON.parse(localStorage.getItem("cameras"));
+  if (getProduct) {
+    return getProduct;
+  } else {
+    return false;
+  }
+}
+
 function sendContact() {
   //envoyer les données à l'api
   let first_name = document.getElementById("text_prenom").value;
@@ -124,6 +133,7 @@ function sendContact() {
     email,
   };
   const produits = getLocalStorage();
+  //console.log(produits);
   let products = [];
   //Faire une boucle pour push chaque id de produit
   produits.forEach((element) => products.push(element.id));
@@ -131,6 +141,8 @@ function sendContact() {
     contact,
     products,
   };
+
+  console.log(data);
   //utilisation de la methode "POST" afin d'envoyer les données à l'api
   fetch("http://127.0.0.1:3000/api/cameras/order", {
     method: "POST",
@@ -143,10 +155,10 @@ function sendContact() {
   })
     .then((res) => res.json())
     .then((res) => {
-      console.log(res.orderId);
+      console.log(res);
       const orderId = res.orderId;
-      window.location = "confirmation.html?order=${orderId}";
-      return orderId;
+      // window.location = "confirmation.html?order=" + orderId;
+      //return orderId;
       console.log("orderId=", orderId);
     });
 
