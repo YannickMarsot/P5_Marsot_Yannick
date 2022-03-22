@@ -5,15 +5,12 @@ A faire:
 _debuguer tout!
 _mocha (test js)
 _redirection confirmation.html avec orderId en parametre url
+_faire une boucle forEach pour totalPanier!
 
 
 
 Questions mentor:
-_Est ce que si je declare une fonction dans un fichier "fonction.js" je peut fare appel à cette fonction 
-dans un autre fichier? (un peu comme sass)
-_pourquoi le boutton "disabled" ne marche pas
-_quelle URL il faut utilisé pour récupéré "orderId"
-
+_
 
 ne marche pas:
 function button_disabled() {
