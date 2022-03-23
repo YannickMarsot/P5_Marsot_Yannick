@@ -142,7 +142,6 @@ function sendContact() {
     products,
   };
 
-  console.log(data);
   //utilisation de la methode "POST" afin d'envoyer les données à l'api
   fetch("http://127.0.0.1:3000/api/cameras/order", {
     method: "POST",
