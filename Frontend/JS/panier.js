@@ -105,7 +105,24 @@ function delProduct(event) {
   location.reload();
 }
 
+// calcul du total
+const cart = JSON.parse(localStorage.getItem("cameras")) || [];
+function displayTotalCart() {
+  let totalCart = 0;
+  cart.forEach((cameras) => {
+    totalCart = totalCart + cameras.price * cameras.qte;
+  });
+  return totalCart;
+}
+
+function writeTotalCart() {
+  totalCart = displayTotalCart();
+  console.log(totalCart);
+  document.querySelector("#display_total_here").innerHTML == `${totalCart}$`;
+}
+
 writeCart();
+writeTotalCart();
 
 function getLocalStorage() {
   const getProduct = JSON.parse(localStorage.getItem("cameras"));
