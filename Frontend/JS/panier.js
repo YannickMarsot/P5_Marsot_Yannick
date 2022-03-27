@@ -52,9 +52,8 @@ function validateEmail() {
 
 //avec JSON.parse on transforme un element JSON en objet javascript!!!
 const elementObjet = JSON.parse(localStorage.getItem("cameras"));
-
-//fonction qui affiche le panier
 function writeCart() {
+  //fonction qui affiche le panier
   if (elementObjet === null) {
     //affichage panier vide:
     document.querySelector("#petitContainerAffichagePanier").innerHTML = `
@@ -117,14 +116,13 @@ function getLocalStorage() {
   }
 }
 
+//envoyer les données à l'api
 function sendContact() {
-  //envoyer les données à l'api
   let first_name = document.getElementById("text_prenom").value;
   let last_name = document.getElementById("text_nom").value;
   let city = document.getElementById("City").value;
   let address = document.getElementById("adress").value;
   let email = document.getElementById("e-mail").value;
-  console.log(first_name, "sendData verification");
   let contact = {
     first_name,
     last_name,
@@ -133,7 +131,6 @@ function sendContact() {
     email,
   };
   const produits = getLocalStorage();
-  //console.log(produits);
   let products = [];
   //Faire une boucle pour push chaque id de produit
   produits.forEach((element) => products.push(element.id));
@@ -141,7 +138,6 @@ function sendContact() {
     contact,
     products,
   };
-
   //utilisation de la methode "POST" afin d'envoyer les données à l'api
   fetch("http://127.0.0.1:3000/api/cameras/order", {
     method: "POST",
@@ -154,12 +150,11 @@ function sendContact() {
   })
     .then((res) => res.json())
     .then((res) => {
-      console.log(res);
-      const orderId = res.orderId;
-      // window.location = "confirmation.html?order=" + orderId;
-      //return orderId;
-      console.log("orderId=", orderId);
+      console.log(res.orderId);
+      //const orderId = res.orderId;
+      //window.location = "confirmation.html?order=" + orderId;
     });
 
   //récupérer l'id pour la page confirmation panier
+  //alert("vôtre commande à était envoyé!!!");
 }
